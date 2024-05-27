@@ -11,5 +11,5 @@ Repita
       Leia (id)
            id := id + id
            r := r + 1
-Até r = id
+Até r = qdg
 Fimalgoritmo
