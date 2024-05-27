@@ -28,7 +28,7 @@ Inicio
       P := 0
       R := 2
       Escreval ("Pessoas que irão participar da pesquisa:")
-      Leia (p)
+      Leia (P)
       Repita
          C := C + 1
          Escreval ("Qual é o gênero da pessoa?")
@@ -42,59 +42,59 @@ Inicio
          Escreval ("Qual é o cargo da pessoa?")
          Escreval ("Escreva o número correspondente:")
          Escreval ("1-Gerente || 2-Adm || 3-Estagiário")
-         Leia ()
+         Leia (F)
          Se (F = 1) entao
-            pgrt := pgrt + 1
+            PGrt := PGrt + 1
             Escreval ("Qual é o estado civil do gerente?")
             Escreval ("Escreva o número correspondente:")
             Escreval ("1-Solteiro || 2-Casado || 3-Divorciado || 4-Viúvo")
-            Leia (st)
+            Leia (ST)
             Se (F = 1) e (ST = 1) entao
-               stgrts := stgrts + 1
+               StGrtS := StGrtS + 1
             Senao
                Se (F = 1) e (ST = 2) entao
-                  stgrtc := stgrtc + 1
+                  StGrtC := StGrtC + 1
                Senao
-                  Se (D = 1) e (ST = 3) entao
-                     stgrtd := stgrtd + 1
+                  Se (F = 1) e (ST = 3) entao
+                     StGrtD := StGrtD + 1
                   Senao
-                     stgrtv := stgrtv + 1
+                     StGrtV := StGrtV + 1
                   Fimse
                Fimse
             Fimse
          Senão
             Se (F = 2) entao
-               padm := padm + 1
+               PAdm := PAdm + 1
                Escreval ("Qual é o salário do administrador?")
                Leia (sal)
-               saladm := sal + saladm
+               SalAdm := Sal + SalAdm
             Senão
-               pest := pest + 1
+               PEst := PEst + 1
                Escreval ("Qual é a idade do estágiário?")
                Leia (id)
-               idest := id + idest
+               IdEst := Id + IdEst
             Fimse
          Fimse
-         Se (pest <> 0) entao
-            idmedest := (idest/pest)
+         Se (PEst <> 0) entao
+            IdMedEst := (IdEst/PEst)
          Senão
-            idmedest := 0
+            IdMedEst := 0
          Fimse
-      Até p = c
+      Até P = C
       Se (P <> 0) entao
          Se (GH <> 0) entao
-            prctgH := (GH/P)*(100)
+            PrctgH := (GH/P)*(100)
          senao
-            prctgH := 0
+            PrctgH := 0
          Fimse
          Se (gm <> 0) entao
-            prctgM := (GM/P)*(100)
+            PrctgM := (GM/P)*(100)
          Senao
-            prctgM := 0
+            PrctgM := 0
          Fimse
       Senao
-         prctgH := 0
-         prctgM := 0
+         PrctgH := 0
+         PrctgM := 0
       Fimse
       Escreval ("A quantidade de")
       Escreval ("Gerente(s):", pgrt)
