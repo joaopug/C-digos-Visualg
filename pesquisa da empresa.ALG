@@ -1,186 +1,146 @@
-Algoritmo "semnome"
-// Disciplina   : [Linguagem e Lógica de Programação]
-// Professor   : Antonio Carlos Nicolodi
-// Descrição   : Aqui você descreve o que o programa faz! (função)
-// Autor(a)    : Nome do(a) aluno(a)
-// Data atual  : 24/05/2024
+Algoritmo
 Var
    p : real //pessoas
-   f : real //função
+   f : real //funÃ§Ã£o
    id : real //idade
    st : real //status civil
-   g : real //gênero
-   sal : real //salário total
-   c : real //conta as repetições
-   r : real //variável para saber se deve repetir ou não
+   g : real //gÃªnero
+   sal : real //salÃ¡rio total
+   c : real //conta as repetiÃ§Ãµes
+   r : real //variÃ¡vel para saber se deve repetir ou nÃ£o
 
    gh : real //quantidade total de homens
    gm : real //quantidade total de mulheres
 
-   salgrt : real //salário total dos gerentes
-   saladm : real //salário total dos adms
-   salest : real //salário dos estagiários
+   saladm : real //salÃ¡rio total dos adms
 
    stgrts : real //status civil total dos gerentes solteiros
    stgrtc : real //status civil total dos gerentes casados
    stgrtd : real //status civil total dos gerentes divorciado
-   stgrtv : real //status civil total dos gerentes viúvos
-   //stadm : real status civil total dos adms
-   //stest : real status civil total estagiários
+   stgrtv : real //status civil total dos gerentes viÃºvos
 
    pgrt : real //quantidade total de gerentes
    padm : real //quantidade total de administradores
-   pest : real //quantidade total de estagiários
+   pest : real //quantidade total de estagiÃ¡rios
 
-   idgrt : real //idade total do gerente
-   idadm : real //idade total do adm
-   idest : real    //idade total dos estagiários
+   idest : real    //idade total dos estagiÃ¡rios
 
-   idmedest : real //média de idade dos estagiários
+   idmedest : real //mÃ©dia de idade dos estagiÃ¡rios
 
    prctgH : real //porcentagem de homens
    prctgM : real //porcentagem de mulheres
 
 Inicio
-Repita
-   Escreval ("Pessoas que irão participar da pesquisa:")
-   Leia (p)
-
 
    Repita
-      Escreval ("Qual é o cargo da pessoa?")
-      Escreval ("Escreva o número correspondente:")
-      Escreval ("1-Gerente || 2-Adm || 3-Estagiário")
-      Leia (f)
-      c := c + 1
-      Se (F = 1) entao
-         pgrt := pgrt + 1
-      senão
-         se (F = 2) entao
-            padm := padm + 1
-         senão
-            pest := pest + 1
-         fimse
-      fimse
+      C := 0
+      P := 0
+      R := 2
+      Escreval ("Pessoas que irÃ£o participar da pesquisa:")
+      Leia (p)
 
 
-      Escreval ("Qual é a idade do pesquisado?")
-      Leia (id)
-      se (F = 1) entao
-         idgrt := id + idgrt
-      senao
-         se (F = 2) entao
-            idadm := id + idadm
+      Repita
+         C := C + 1
+
+         Escreval ("Qual Ã© o gÃªnero da pessoa?")
+         Escreval ("1-Homem || 2-Mulher")
+         Leia (G)
+         Se (G = 1) entao
+            GH := GH + 1
+         Senao
+            GM := GM + 1
+         Fimse
+
+         Escreval ("Qual Ã© o cargo da pessoa?")
+         Escreval ("Escreva o nÃºmero correspondente:")
+         Escreval ("1-Gerente || 2-Adm || 3-EstagiÃ¡rio")
+         Leia ()
+         Se (F = 1) entao
+            pgrt := pgrt + 1
+            Escreval ("Qual Ã© o estado civil do gerente?")
+            Escreval ("Escreva o nÃºmero correspondente:")
+            Escreval ("1-Solteiro || 2-Casado || 3-Divorciado || 4-ViÃºvo")
+            Leia (st)
+            Se (F = 1) e (ST = 1) entao
+               stgrts := stgrts + 1
+            Senao
+               Se (F = 1) e (ST = 2) entao
+                  stgrtc := stgrtc + 1
+               Senao
+                  Se (D = 1) e (ST = 3) entao
+                     stgrtd := stgrtd + 1
+                  Senao
+                     stgrtv := stgrtv + 1
+                  Fimse
+               Fimse
+            Fimse
+         SenÃ£o
+            Se (F = 2) entao
+               padm := padm + 1
+               Escreval ("Qual Ã© o salÃ¡rio do administrador?")
+               Leia (sal)
+               saladm := sal + saladm
+            SenÃ£o
+               pest := pest + 1
+               Escreval ("Qual Ã© a idade do estÃ¡giÃ¡rio?")
+               Leia (id)
+               idest := id + idest
+            Fimse
+         Fimse
+
+         Se (pest <> 0) entao
+            idmedest := (idest/pest)
+         SenÃ£o
+            idmedest := 0
+         Fimse
+      AtÃ© p = c
+
+      Se (P <> 0) entao
+         Se (GH <> 0) entao
+            prctgH := (GH/P)*(100)
          senao
-            idest := id + idest
-         fimse
-      fimse
-
-
-      Escreval ("Qual é o salário do pesquisado?")
-      Leia (sal)
-      se (F = 1) entao
-         salgrt := sal + salgrt
-      senao
-         se (F = 2) entao
-            saladm := sal + saladm
-         senao
-            salest := sal + salest
-         fimse
-      fimse
-
-
-      Escreval ("Qual é o estado civil do pesquisado?")
-      Escreval ("Escreva o número correspondente:")
-      Escreval ("1-Solteiro || 2-Casado || 3-Divorciado || 4-Viúvo")
-      Escreval ("4-Viúvo")
-      Leia (st)
-      se (F = 1) e (st = 1) entao
-         stgrts := stgrts + 1
-      senao
-         se (f = 1) e (st = 2) entao
-            stgrtc := stgrtc + 1
-         senao
-            se (f = 1) e (st = 3) entao
-               stgrtd := stgrtd + 1
-            senao
-               stgrtv := stgrtv + 1
-            fimse
-         fimse
-      fimse
-
-
-
-      //senao
-      //   se (F = 2) entao
-      //      stadm := stadm + 1
-      //   senao
-      //      stest := stest + 1
-      //   fimse
-      //fimse
-
-
-      Escreval ("Qual é o gênero do pesquisado?")
-      Escreval ("1-Homem || 2-Mulher")
-      Leia (g)
-      se (g = 1) entao
-         gh := gh + 1
-      senao
-         gm := gm + 1
-      fimse
-
-      Se (pest <> 0) entao
-         idmedest := (idest/pest)
-      senão
-         idmedest := 0
-      Fimse
-
-   Até p = c
-
-   Se (p <> 0) entao
-      Se (gh <> 0) entao
-         prctgH := (gh/p)*(100)
-      senao
+            prctgH := 0
+         Fimse
+         Se (gm <> 0) entao
+            prctgM := (GM/P)*(100)
+         Senao
+            prctgM := 0
+         Fimse
+      Senao
          prctgH := 0
-      Fimse
-      Se (gm <> 0) entao
-         prctgM := (gm/p)*(100)
-      senao
          prctgM := 0
-      fimse
-   senao
-      prctgH := 0
-      prctgM := 0
-   fimse
+      Fimse
 
-   Escreval ("A quantidade de")
-   Escreval ("Gerente(s):", pgrt)
-   Escreval ("Adm(s):", padm)
-   Escreval ("Estágiário(s):", pest)
+      Escreval ("A quantidade de")
+      Escreval ("Gerente(s):", pgrt)
+      Escreval ("Adm(s):", padm)
+      Escreval ("EstÃ¡giÃ¡rio(s):", pest)
 
-   Escreval ("A média de idade dos estagiários é", idmedest)
+      Se (PEst > 0)
+         Escreval ("A mÃ©dia de idade dos estagiÃ¡rios Ã©", IdMedEst)
+      Fimse
 
-   Escreval ("A folha de pagamento do setor administrativo é", salest)
+      Se (PAdm > 0)
+         Escreval ("A folha de pagamento do setor administrativo Ã©", SalAdm)
+      Fimse
 
-   Se (stgrts <> 0) entao
-      Escreval ("Há", stgrts, " gerente(s) solteiro(s)")
-   Fimse
-   Se (stgrtc <> 0) entao
-      Escreval ("Há", stgrtc, " gerente(s) casado(s)")
-   Fimse
-   se (stgrtd <> 0) entao
-      Escreval ("Há", stgrtd, " gerente(s) divorciado(s)")
-   Fimse
-   se (stgrtv <> 0) entao
-      Escreval ("Há", stgrtv, " gerente(s) viúvo(s)")
-   Fimse
+      Se (StGrtS <> 0) entao
+         Escreval ("HÃ¡", StGrtS, " gerente(s) solteiro(s)")
+      Fimse
+      Se (StGrtC <> 0) entao
+         Escreval ("HÃ¡", StGrtC, " gerente(s) casado(s)")
+      Fimse
+      se (StGrtD <> 0) entao
+         Escreval ("HÃ¡", StGrtD, " gerente(s) divorciado(s)")
+      Fimse
+      se (StGrtV <> 0) entao
+         Escreval ("HÃ¡", StGrtV, " gerente(s) viÃºvo(s)")
+      Fimse
 
-   Escreval (prctgH,"% é homem e", prctgM,"% é mulher")
-   Escreval ("Deseja refazer a pesquisa?")
-   Escreval ("1 - Sim || 2 - Não")
-   Leia (R)
-Até (R <> 1)
-
-
-
+      Escreval(PrctgH,"% Ã© homem e",PrctgM,"% Ã© mulher")
+      Escreval ("Deseja refazer a pesquisa?")
+      Escreval ("1 - Sim || 2 - NÃ£o")
+      Leia (R)
+   AtÃ© (R <> 1)
 Fimalgoritmo
