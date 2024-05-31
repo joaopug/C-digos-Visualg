@@ -1,4 +1,4 @@
-Algoritmo
+Algoritmo "pesquisa da empresa"
 Var
    p,f,id,st,g,sal,c,r,gh,gm,saladm,stgrts,stgrtc,stgrtd,stgrtv,pgrt,padm,pest,idest,idmedest,prctgH,prctgM : real
    //f=função
@@ -24,16 +24,38 @@ Var
    //prctgM=porcentagem de mulheres
 Inicio
    Repita
-      C := 0
       P := 0
+      F := 0
+      ID := 0
+      ST := 0
+      G := 0
+      SAL := 0
+      C := 0
       R := 2
+      GH := 0
+      GM := 0
+      SALADM := 0
+      STGRTS := 0
+      STGRTC := 0
+      STGRTD := 0
+      STGRTV := 0
+      PGRT := 0
+      PADM := 0
+      PEST := 0
+      IDEST := 0
+      IDMEDEST := 0
+      PRCTGH := 0
+      PRCTGM := 0
+      Limpatela
       Escreval ("Pessoas que irão participar da pesquisa:")
       Leia (P)
+      Limpatela
       Repita
          C := C + 1
          Escreval ("Qual é o gênero da pessoa?")
          Escreval ("1-Homem || 2-Mulher")
          Leia (G)
+         Limpatela
          Se (G = 1) entao
             GH := GH + 1
          Senao
@@ -43,12 +65,14 @@ Inicio
          Escreval ("Escreva o número correspondente:")
          Escreval ("1-Gerente || 2-Adm || 3-Estagiário")
          Leia (F)
+         Limpatela
          Se (F = 1) entao
             PGrt := PGrt + 1
             Escreval ("Qual é o estado civil do gerente?")
             Escreval ("Escreva o número correspondente:")
             Escreval ("1-Solteiro || 2-Casado || 3-Divorciado || 4-Viúvo")
             Leia (ST)
+            Limpatela
             Se (F = 1) e (ST = 1) entao
                StGrtS := StGrtS + 1
             Senao
@@ -67,11 +91,13 @@ Inicio
                PAdm := PAdm + 1
                Escreval ("Qual é o salário do administrador?")
                Leia (sal)
+               Limpatela
                SalAdm := Sal + SalAdm
             Senão
                PEst := PEst + 1
                Escreval ("Qual é a idade do estágiário?")
                Leia (id)
+               Limpatela
                IdEst := Id + IdEst
             Fimse
          Fimse
@@ -83,7 +109,7 @@ Inicio
       Até P = C
       Se (P <> 0) entao
          Se (GH <> 0) entao
-            PrctgH := (GH/P)*(100)
+            PrctgH :=(GH/P)*(100)
          senao
             PrctgH := 0
          Fimse
@@ -100,10 +126,10 @@ Inicio
       Escreval ("Gerente(s):", pgrt)
       Escreval ("Adm(s):", padm)
       Escreval ("Estágiário(s):", pest)
-      Se (PEst > 0)
+      Se (PEst > 0) entao
          Escreval ("A média de idade dos estagiários é", IdMedEst)
       Fimse
-      Se (PAdm > 0)
+      Se (PAdm > 0) entao
          Escreval ("A folha de pagamento do setor administrativo é", SalAdm)
       Fimse
       Se (StGrtS <> 0) entao
@@ -118,7 +144,7 @@ Inicio
       se (StGrtV <> 0) entao
          Escreval ("Há", StGrtV, " gerente(s) viúvo(s)")
       Fimse
-      Escreval(PrctgH,"% é homem e",PrctgM,"% é mulher")
+      Escreval (PrctgH,"% é homem e",PrctgM,"% é mulher")
       Escreval ("Deseja refazer a pesquisa?")
       Escreval ("1 - Sim || 2 - Não")
       Leia (R)
